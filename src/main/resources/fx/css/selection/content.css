@@ -1,0 +1,18 @@
+.icon_image{
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.20), 10, 0, 0, 0);
+}
+
+.icon{
+    -fx-background-radius: 9;
+    -fx-cursor: hand;
+    -fx-background-color: white;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 10, 0, 0, 0);
+}
+
+.icon:hover{
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0);
+}
+
+.icon:pressed{
+    -fx-effect: innershadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);
+}

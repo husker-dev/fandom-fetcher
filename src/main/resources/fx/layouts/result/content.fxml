@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER" prefHeight="700.0" prefWidth="886.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label alignment="CENTER" prefHeight="50.0" prefWidth="273.0" text="Результат" textAlignment="CENTER">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <BorderPane prefHeight="600.0" prefWidth="886.0">
+         <center>
+            <HBox alignment="TOP_CENTER" BorderPane.alignment="TOP_CENTER">
+               <children>
+                  <VBox fx:id="result_list" prefHeight="458.0" prefWidth="299.0" spacing="10.0" />
+               </children>
+            </HBox>
+         </center>
+         <bottom>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="600.0" spacing="35.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="result_back" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="&lt;" />
+                  <Label fx:id="result_page" text="Label" />
+                  <Button fx:id="result_next" mnemonicParsing="false" prefHeight="25.0" prefWidth="80.0" text="&gt;" />
+               </children>
+            </HBox>
+         </bottom>
+      </BorderPane>
+   </children>
+</VBox>
