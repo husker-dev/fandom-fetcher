@@ -18,6 +18,8 @@ class WelcomeScreen: Screen() {
     var textLabel: Label
     var logoTimer = Timer()
 
+    var transitionEnd = false
+
     private val texts = arrayOf("meet friends", "be yourself")
 
     init{
@@ -27,6 +29,10 @@ class WelcomeScreen: Screen() {
 
         for(i in 1..15)
             logoImages.add(Resources.image("logo/p$i.png"))
+
+        content.setOnMouseClicked{
+            toNextScreen()
+        }
     }
 
     override fun onShow() {
@@ -60,7 +66,14 @@ class WelcomeScreen: Screen() {
 
             logoTimer.cancel()
 
-            App.setScreen(LoginScreen())
+            toNextScreen()
         }.start()
+    }
+
+    private fun toNextScreen(){
+        if(transitionEnd)
+            return
+        transitionEnd = true
+        Thread{App.setScreen(LoginScreen())}.start()
     }
 }
