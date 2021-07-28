@@ -1,6 +1,7 @@
 package com.husker.culture.ui.impl
 
 import com.husker.culture.App
+import com.husker.culture.AppTimer
 import com.husker.culture.Resources
 import com.husker.culture.core.Profile
 import com.husker.culture.ui.core.Screen
@@ -57,12 +58,10 @@ class GroupsScreen: Screen() {
         if (this::timer.isInitialized)
             timer.cancel()
 
-        timer = Timer()
-        timer.schedule(object: TimerTask(){
-            override fun run() {
-                search(searchField.text)
-            }
-        }, 500)
+        timer = AppTimer.create(500, 1000){
+            search(searchField.text)
+            timer.cancel()
+        }
     }
 
     private fun search(text: String) {

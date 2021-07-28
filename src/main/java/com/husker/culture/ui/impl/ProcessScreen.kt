@@ -1,6 +1,7 @@
 package com.husker.culture.ui.impl
 
 import com.husker.culture.App
+import com.husker.culture.AppTimer
 import com.husker.culture.Resources
 import com.husker.culture.core.Data
 import com.husker.culture.core.FindingProcess
@@ -41,12 +42,10 @@ class ProcessScreen: Screen() {
     override fun onShow() {
         NodeAnimation.showNode(logo, NodeAnimation.Type.RISE)
 
-        Timer().schedule(object: TimerTask(){
-            var frame = 0
-            override fun run() {
-                logo.image = logoImages[frame++ % logoImages.size]
-            }
-        }, 0, 750)
+        var frame = 0
+        AppTimer.create(0, 750){
+            logo.image = logoImages[frame++ % logoImages.size]
+        }
 
         Thread{startProcess()}.start()
     }

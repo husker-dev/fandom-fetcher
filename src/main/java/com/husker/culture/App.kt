@@ -14,12 +14,16 @@ import javafx.scene.layout.BackgroundFill
 import javafx.scene.layout.CornerRadii
 import javafx.scene.paint.Color
 import javafx.stage.Stage
+import javafx.stage.WindowEvent
 
 class App: Application() {
 
     companion object{
         @JvmStatic
         lateinit var instance: App
+
+        @JvmStatic
+        var shutdownListeners = arrayListOf<Runnable>()
 
         fun setScreen(screen: Screen){
             if(instance.contentPane.children.size > 0)
@@ -63,6 +67,10 @@ class App: Application() {
         stage.title = "Fandom Fetcher"
         stage.icons.add(Resources.image("logo/icon.png"))
         setScreen(WelcomeScreen())
+
+        stage.scene.window.addEventFilter(WindowEvent.WINDOW_CLOSE_REQUEST){
+            shutdownListeners.forEach { it.run() }
+        }
 
         stage.show()
     }

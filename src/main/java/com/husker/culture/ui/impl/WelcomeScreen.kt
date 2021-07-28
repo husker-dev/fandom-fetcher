@@ -1,6 +1,7 @@
 package com.husker.culture.ui.impl
 
 import com.husker.culture.App
+import com.husker.culture.AppTimer
 import com.husker.culture.Resources
 import com.husker.culture.ui.core.Screen
 import com.husker.minecraft.launcher.app.animation.NodeAnimation
@@ -38,12 +39,10 @@ class WelcomeScreen: Screen() {
     override fun onShow() {
         NodeAnimation.showNode(logo, NodeAnimation.Type.RISE)
 
-        logoTimer.schedule(object: TimerTask(){
-            var frame = 0
-            override fun run() {
-                logo.image = logoImages[frame++ % logoImages.size]
-            }
-        }, 0, 750)
+        var frame = 0
+        logoTimer = AppTimer.create(0, 750) {
+            logo.image = logoImages[frame++ % logoImages.size]
+        }
 
         Thread{
             Thread.sleep(1000)
