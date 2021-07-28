@@ -24,9 +24,9 @@ Fandom Fetcher
 
 ## ```Скачать```
 
-- Windows/Linux/MacOS (x64):  [```Скачать```]()
+- Windows/Linux/MacOS (x64):  [```Скачать```](https://github.com/husker-dev/fandom-fetcher/releases/download/1.0/SubCultureFetcher-1.0-x64.jar)
 
-- Windows/Linux/MacOS (x86):  [```Скачать```]()
+- Windows/Linux/MacOS (x86):  [```Скачать```](https://github.com/husker-dev/fandom-fetcher/releases/download/1.0/SubCultureFetcher-1.0-x86.jar)
 
 ## ```Требования```
 
